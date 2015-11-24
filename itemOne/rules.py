@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
+
 class Rule(object):
     def action(self, block, handler):
         handler.start(self.type)

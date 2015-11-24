@@ -24,68 +24,52 @@ class Handler(object):
 
 
 class HTMLRenderer(Handler):
-    @staticmethod
-    def start_document():
+    def start_document(self):
         print '<html><head><title>...</title></head><body>'
 
-    @staticmethod
-    def end_document():
+    def end_document(self):
         print '</body></html>'
 
-    @staticmethod
-    def start_paragraph():
+    def start_paragraph(self):
         print '<p>'
 
-    @staticmethod
-    def end_paragraph():
+    def end_paragraph(self):
         print '</p>'
 
-    @staticmethod
-    def start_heading():
+    def start_heading(self):
         print '<h2>'
 
-    @staticmethod
-    def end_heading():
+    def end_heading(self):
         print '</h2>'
 
-    @staticmethod
-    def start_list():
+    def start_list(self):
         print '<ul>'
 
-    @staticmethod
-    def end_list():
+    def end_list(self):
         print '</ul>'
 
-    @staticmethod
-    def start_listitem():
+    def start_listitem(self):
         print '<li>'
 
-    @staticmethod
-    def end_listitem():
+    def end_listitem(self):
         print '</li>'
 
-    @staticmethod
-    def start_title():
+    def start_title(self):
         print '<h1>'
 
-    @staticmethod
-    def end_title():
+    def end_title(self):
         print '</h1>'
 
-    @staticmethod
-    def sub_emphasis(match):
+    def sub_emphasis(self, match):
         return '<em>%s</em>' % match.group(1)
 
-    @staticmethod
-    def sub_url(match):
+    def sub_url(self, match):
         return '<a href="%s">%s</a>' % (match.group(1), match.group(1))
 
-    @staticmethod
-    def sub_mail(match):
+    def sub_mail(self, match):
         return '<a href="mailto:%s">%s</a>' % (match.group(1), match.group(1))
 
-    @staticmethod
-    def feed(data):
+    def feed(self, data):
         print data
 
 
