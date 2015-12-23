@@ -53,7 +53,7 @@ class ListRule(ListItemRule):
             handler.start(self.type)
             self.inside = True
         elif self.inside and not ListItemRule.condition(self, block):
-            handler.start(self.type)
+            handler.end(self.type)
             self.inside = False
         return False
 

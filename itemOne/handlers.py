@@ -1,9 +1,11 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-
+# 处理各种html 的标记
 
 class Handler(object):
     def callback(self, prefix, name, *args):
+        # getattr(object, name[, default]); return the value of the named attribute of object.
+        # If the named attribute does not exist, default is returned
         method = getattr(self, prefix+name, None)
         if callable(method):
             return method(*args)
